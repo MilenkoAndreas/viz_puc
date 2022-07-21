@@ -13,9 +13,10 @@ st.title("Haciendo gráficos con altair en streamlit")
 
 
 #df=pd.read_csv('FAOSTAT_data_7-20-2022.csv') 
+lst = ['Meat, chicken', 'Meat, cattle','Meat, pig','Meat, sheep']
 
 source=df.query('Area == "Chile"')\
-.query('Item == "Meat, chicken" ')
+.query('Item in @lst ')
 
 
 st.write(source.head(5))
@@ -24,7 +25,7 @@ highlight = alt.selection(type='single', on='mouseover',
                           fields=['symbol'], nearest=True)
 
 base = alt.Chart(source).encode(
-    x='Year:T',
+    x='Year',
     y='Value:Q',
     color='Item:N'
 )
