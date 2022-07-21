@@ -3,25 +3,11 @@ import numpy as np
 import altair as alt
 import streamlit as st
 
-uploaded_file = st.file_uploader('FAOSTAT_data_7-20-2022.csv')
-if uploaded_file is not None:
-     # # To read file as bytes:
-     # bytes_data = uploaded_file.getvalue()
-     # st.write(bytes_data)
-     # 
-     # # To convert to a string based IO:
-     # stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-     # st.write(stringio)
-     # 
-     # # To read file as string:
-     # string_data = stringio.read()
-     # st.write(string_data)
+sheet_id = st.secrets["sheet_id"]
+sheet_name = st.secrets["sheet_name"]
+url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 
-     # Can be used wherever a "file-like" object is accepted:
-     df = pd.read_csv(uploaded_file)
-     st.write(df.head(5))
-
-
+df=pd.read_csv(url)
 
 st.title("Haciendo gráficos con altair en streamlit")
 
