@@ -17,7 +17,7 @@ lst = ['Meat, chicken', 'Meat, cattle','Meat, pig','Meat, sheep']
 
 source=df.query('Area == "Chile"')\
 .query('Item in @lst ')
-
+source.Year = pd.to_datetime(source.Year, format='%Y')
 
 st.write(source.head(5))
 
