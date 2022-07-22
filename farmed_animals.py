@@ -62,7 +62,6 @@ st.altair_chart(c, use_container_width=True)
 
 st.header('Idiom Test with Plotly')
 fig = px.line(source, x="Year", y="Value", color='Item',
-,
                  labels={
                      "Value": "Animals Slaughtered in the thousands",
                      "Item": "Species"
