@@ -66,5 +66,5 @@ fig = px.line(source, x="Year", y="Value", color='Item',
                      "Value": "Animals Slaughtered in the thousands",
                      "Item": "Species"
                  },
-                title="How many animals are slaughtered per year in Chile?"))
+                title="How many animals are slaughtered per year in Chile?")
 st.plotly_chart(fig, use_container_width=True)
