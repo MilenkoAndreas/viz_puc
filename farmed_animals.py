@@ -2,6 +2,11 @@ import pandas as pd
 import numpy as np
 import altair as alt
 import streamlit as st
+#import plotly.figure_factory as ff
+import plotly.express as px
+
+
+
 
 sheet_id = st.secrets["sheet_id"]
 sheet_name = st.secrets["sheet_name"]
@@ -48,3 +53,7 @@ c = points + lines
 #      x='a', y='b', color='c', tooltip=['a', 'b', 'c'])
 # 
 st.altair_chart(c, use_container_width=True)
+
+
+fig = px.line(source, x="Year", y="Value", color='Item')
+st.plotly_chart(fig, use_container_width=True)
