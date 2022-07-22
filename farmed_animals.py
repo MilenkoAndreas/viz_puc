@@ -15,7 +15,7 @@ url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sh
 
 df=pd.read_csv(url)
 df['Item'].value_counts()
-st.title("How many animals are slaughtered?")
+st.title("How many animals are slaughtered per year?",)
 st.text("The data is part of the FAOSTAT database from the Food and Agriculture Organization (FAO) of the United Nations. We have the yearly comsumption of meat from 1961 to 2020 ")
 
 #df=pd.read_csv('FAOSTAT_data_7-20-2022.csv') 
@@ -31,6 +31,7 @@ source.Year = pd.to_datetime(source.Year, format='%Y')
 st.text("Sample:")
 st.write(source.head(5))
 
+st.header('Idiom Test with Altair')
 highlight = alt.selection(type='single', on='mouseover',
                           fields=['symbol'], nearest=True)
 
@@ -59,6 +60,12 @@ c = points + lines
 # 
 st.altair_chart(c, use_container_width=True)
 
-
-fig = px.line(source, x="Year", y="Value", color='Item')
+st.header('Idiom Test with Plotly')
+fig = px.line(source, x="Year", y="Value", color='Item',
+,
+                 labels={
+                     "Value": "Animals Slaughtered in the thousands",
+                     "Item": "Species"
+                 },
+                title="How many animals are slaughtered per year in Chile?"))
 st.plotly_chart(fig, use_container_width=True)
