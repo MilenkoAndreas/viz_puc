@@ -16,19 +16,19 @@ url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sh
 df=pd.read_csv(url)
 df['Item'].value_counts()
 st.title("How many animals are slaughtered?")
-
+st.text("The data is part of the FAOSTAT database from the Food and Agriculture Organization (FAO) of the United Nations. We have the yearly comsumption of meat from 1961 to 2020 ")
 
 #df=pd.read_csv('FAOSTAT_data_7-20-2022.csv') 
 lst = ['Meat, chicken', 'Meat, cattle','Meat, pig','Meat, sheep']
 
-components.html("<html><body><h1 style='color:white;font-size:10px'>The data is part of the FAOSTAT database from the Food and Agriculture Organization (FAO) of the United Nations. We have the yearly comsumption of meat from 1961 to 2020 </h1></body></html>")
-components.html("<html><body><a href='https://www.fao.org'>FAO</a></body></html>")
+#components.html("<html><body><h1 style='color:white;font-size:10px'>The data is part of the FAOSTAT database from the Food and Agriculture Organization (FAO) of the United Nations. We have the yearly comsumption of meat from 1961 to 2020 </h1></body></html>")
+#components.html("<html><body><a href='https://www.fao.org'>FAO</a></body></html>")
 
 
 source=df.query('Area == "Chile"')\
 .query('Item in @lst ')
 source.Year = pd.to_datetime(source.Year, format='%Y')
-
+st.text("Sample:")
 st.write(source.head(5))
 
 highlight = alt.selection(type='single', on='mouseover',
