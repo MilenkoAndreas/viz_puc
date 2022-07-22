@@ -21,7 +21,7 @@ st.title("How many animals are slaughtered?")
 #df=pd.read_csv('FAOSTAT_data_7-20-2022.csv') 
 lst = ['Meat, chicken', 'Meat, cattle','Meat, pig','Meat, sheep']
 
-components.html("<html><body><h1>The data is part of the FAOSTAT database from the Food and Agriculture Organization (FAO) of the United Nations.</h1><br><a href='https://www.fao.org'>link text</a></body></html>", width=200, height=200)
+components.html("<html><body><h1>The data is part of the FAOSTAT database from the Food and Agriculture Organization (FAO) of the United Nations.</h1><br><a href='https://www.fao.org'>link text</a></body></html>")
 source=df.query('Area == "Chile"')\
 .query('Item in @lst ')
 source.Year = pd.to_datetime(source.Year, format='%Y')
