@@ -4,7 +4,7 @@ import altair as alt
 import streamlit as st
 #import plotly.figure_factory as ff
 import plotly.express as px
-from dash import Dash, dcc, html, Input, Output
+import streamlit.components.v1 as components
 
 
 
@@ -15,12 +15,13 @@ url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sh
 
 df=pd.read_csv(url)
 df['Item'].value_counts()
-st.title("Haciendo gráficos con altair en streamlit")
+st.title("How many animals are slaughtered?")
 
 
 #df=pd.read_csv('FAOSTAT_data_7-20-2022.csv') 
 lst = ['Meat, chicken', 'Meat, cattle','Meat, pig','Meat, sheep']
 
+components.html("<html><body><h1>Hello, World</h1></body></html>", width=200, height=200)
 source=df.query('Area == "Chile"')\
 .query('Item in @lst ')
 source.Year = pd.to_datetime(source.Year, format='%Y')
