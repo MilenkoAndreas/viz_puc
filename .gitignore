@@ -1,3 +1,5 @@
 *.csv
 .streamlit/secrets.toml
 *.ipynb
+.Rhistory
+.ipynb_checkpoints/*
