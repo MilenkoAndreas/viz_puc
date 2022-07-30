@@ -7,6 +7,13 @@ import streamlit as st
 import plotly.express as px
 import streamlit.components.v1 as components
 
+
+st.set_page_config(page_title="Plotting Demo", page_icon="📈")
+
+#st.markdown("# Plotting Demo")
+st.sidebar.header("Plotting Demo")
+
+
 sheet_id = st.secrets["sheet_id"]
 sheet_name = st.secrets["sheet_name"]
 url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
