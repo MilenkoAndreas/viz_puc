@@ -56,7 +56,7 @@ st.text("Data:")
 st.write(df_total_pigs.query('Area == "Chile"').head(50))
 
 
-st.header('How many animals are slaughtered per year?')
+st.header('Slaughtered Animals per year')
 
 df_total_pigs.Year=pd.to_datetime(df_total_pigs.Year, format='%Y')
 
