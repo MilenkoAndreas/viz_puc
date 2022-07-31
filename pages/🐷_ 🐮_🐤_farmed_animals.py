@@ -35,7 +35,7 @@ df_total_pigs=df.query('Item in @lst ')
 #df_total_pigs_last=df_total_pigs[df_total_pigs['Year']==2020]
 
 st.title("How many animals are slaughtered ?")
-st.text("The data is part of the FAOSTAT database from \nthe Food and Agriculture Organization (FAO) of the United Nations.\n We have the yearly comsumption of meat from 1961 to 2020 ")
+st.text("The data is part of the FAOSTAT database from the Food and Agriculture Organization (FAO) of the United Nations.\nWe have the yearly comsumption of meat from 1961 to 2020 ")
 
 # sub_regions= st.multiselect(
 #          'Select a Region',
@@ -53,7 +53,7 @@ st.text("The data is part of the FAOSTAT database from \nthe Food and Agricultur
 #.query('Item in @lst ')
 #source.Year = pd.to_datetime(source.Year, format='%Y')
 st.text("Data:")
-st.write(df_total_pigs.head(8))
+st.write(df_total_pigs.query('Area == Chile').head(20))
 
 
 st.header('How many animals are slaughtered per year?')
