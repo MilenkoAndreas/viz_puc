@@ -136,6 +136,6 @@ with fig_col2:
     
      source_tree=df_total_pigs_last\
      .query('`sub-region` in @sub_regions ')
-     fig_tree = px.bar(source_tree, x="Value",y="Area",orientation='h',hover_data="Value")
+     fig_tree = px.bar(source_tree, x="Value",y="Area")
   
      st.plotly_chart(fig_tree, use_container_width=True)
