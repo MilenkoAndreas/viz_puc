@@ -28,7 +28,7 @@ df['Area']=df['Area'].replace({'China, mainland': 'China', 'T?rkiye': 'Turkey',
 
 lst = ['Meat, chicken', 'Meat, cattle','Meat, pig']
 
-df_total_pigs=df_total_pigs.query('Item in @lst ')
+df_total_pigs=df.query('Item in @lst ')
 
 #df_total_pigs['sub-region']=df_total_pigs['intermediate-region'].where(df_total_pigs['sub-region'].eq('Latin America and the Caribbean'),df_total_pigs['sub-region'])
 #df_total_pigs_last=df_total_pigs[df_total_pigs['Year']==2020]
