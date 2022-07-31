@@ -9,9 +9,6 @@ import streamlit.components.v1 as components
 import urllib
 import requests
 from PIL import Image
-[theme]
-base="dark"
-primaryColor="purple"
 
 def save_response_content(response, destination):
     CHUNK_SIZE = 32768
