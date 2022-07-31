@@ -53,7 +53,7 @@ st.text("The data is part of the FAOSTAT database from the Food and Agriculture 
 #.query('Item in @lst ')
 #source.Year = pd.to_datetime(source.Year, format='%Y')
 st.text("Data:")
-st.write(df_total_pigs.query('Area == Chile').head(20))
+st.write(df_total_pigs.query('Area == "Chile"').head(20))
 
 
 st.header('How many animals are slaughtered per year?')
