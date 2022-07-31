@@ -9,7 +9,9 @@ import streamlit.components.v1 as components
 import urllib
 import requests
 from PIL import Image
-
+[theme]
+base="dark"
+primaryColor="purple"
 
 def save_response_content(response, destination):
     CHUNK_SIZE = 32768
@@ -23,7 +25,7 @@ response = session.get(st.secrets["image_pig"], stream = True)
 
 save_response_content(response,'pigs.png')
 
-st.set_page_config(page_title="Plotting Demo", page_icon="📈")
+st.set_page_config(page_title="Plotting Demo", page_icon="📈",layout="wide")
 
 
 st.title("How many pigs do we slaugther?")
