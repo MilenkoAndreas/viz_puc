@@ -145,6 +145,7 @@ with fig_col2:
      source_tree=df_total_pigs_last\
      .query('`sub-region` in @sub_regions ')
      fig_tree = px.treemap(source_tree, path=['sub-region', 'Area'],
-                   values='Value')
+                   values='Value',
+                    title="How many pigs were slaughtered in 2020?"))
   
      st.plotly_chart(fig_tree, use_container_width=True)
