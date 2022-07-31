@@ -26,17 +26,17 @@ def save_response_content(response, destination):
 def set_image(url):
     session = requests.Session()
     response = session.get(url, stream = True)
-    save_response_content(response,'pigs.png')
-    image = Image.open('pigs.png')
+    save_response_content(response,'cow.png')
+    image = Image.open('cow.png')
     return image
     
 st.set_page_config(layout="wide")
 
 
-st.title("How many pigs do we slaugther?")
+st.title("How many cows do we slaugther?")
 
 #image = Image.open('pigs.png')
-image = set_image(st.secrets["image_pig"])
+image = set_image(st.secrets["image_cow"])
 
 fig_col_a, fig_col_b = st.columns(2)
 
@@ -134,7 +134,7 @@ with fig_col1:
                          "Value": "",
                          "Item": ""
                      },
-                    title="How many pigs are slaughtered per year?")
+                    title="How many cows are slaughtered per year?")
      st.plotly_chart(fig, use_container_width=True)
    
 with fig_col2:
@@ -146,6 +146,6 @@ with fig_col2:
      .query('`sub-region` in @sub_regions ')
      fig_tree = px.treemap(source_tree, path=['sub-region', 'Area'],
                    values='Value',
-                    title="How many pigs were slaughtered in 2020?")
+                    title="How many cows were slaughtered in 2020?")
   
      st.plotly_chart(fig_tree, use_container_width=True)
