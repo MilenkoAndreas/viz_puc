@@ -17,18 +17,26 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
-session = requests.Session()
-response = session.get(st.secrets["image_pig"], stream = True)
+#session = requests.Session()
+#response = session.get(st.secrets["image_pig"], stream = True)
 
-save_response_content(response,'pigs.png')
+#save_response_content(response,'pigs.png')
 
+@st.cache(suppress_st_warning=True)
+def set_image(url):
+    session = requests.Session()
+    response = session.get(url, stream = True)
+    save_response_content(response,'pigs.png')
+    image = Image.open('pigs.png')
+    return image
+    
 st.set_page_config(layout="wide")
 
 
 st.title("How many pigs do we slaugther?")
 
-image = Image.open('pigs.png')
-
+#image = Image.open('pigs.png')
+image = set_image(st.secrets["image_pig"])
 
 fig_col_a, fig_col_b = st.columns(2)
 
