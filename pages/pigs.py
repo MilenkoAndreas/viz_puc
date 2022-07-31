@@ -17,7 +17,7 @@ st.sidebar.header("Plotting Demo")
 
 sheet_id = st.secrets["sheet_id"]
 sheet_name = st.secrets["sheet_name"]
-sheet_region = st.secrets["sheet_region"]
+#sheet_region = st.secrets["sheet_region"]
 sheet_region = "all"
 url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 url_regions=f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_region}"
