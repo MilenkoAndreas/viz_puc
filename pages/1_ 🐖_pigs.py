@@ -146,6 +146,6 @@ with fig_col2:
      .query('`sub-region` in @sub_regions ')
      fig_tree = px.treemap(source_tree, path=['sub-region', 'Area'],
                    values='Value',
-                    title="How many pigs were slaughtered in 2020?"))
+                    title="How many pigs were slaughtered in 2020?")
   
      st.plotly_chart(fig_tree, use_container_width=True)
