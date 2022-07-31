@@ -71,5 +71,5 @@ fig = px.line(source, x="Year", y="Value", color='Item',
                  labels={
                      "Value": "Animals Slaughtered",
                      "Item": "Species"
-                 }
+                 })
 st.plotly_chart(fig, use_container_width=True)
