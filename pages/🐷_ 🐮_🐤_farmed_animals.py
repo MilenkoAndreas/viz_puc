@@ -6,6 +6,7 @@ import streamlit as st
 import plotly.express as px
 import streamlit.components.v1 as components
 
+st.set_page_config(layout="wide")
 
 
 sheet_id = st.secrets["sheet_id"]
@@ -55,21 +56,20 @@ st.text("Data:")
 st.write(df_total_pigs.head(8))
 
 
-st.header('Idiom Test with Plotly')
+st.header('How many animals are slaughtered per year?')
 
 df_total_pigs.Year=pd.to_datetime(df_total_pigs.Year, format='%Y')
 
 country = st.selectbox(
      'Select a Country',
-      pd.unique(df_total_pigs["Area"]),index=36)
+      pd.unique(df_total_pigs["Area"]),index=34)
       
 source=df_total_pigs\
       .query('Area == @country ')
 
 fig = px.line(source, x="Year", y="Value", color='Item',
                  labels={
-                     "Value": "Animals Slaughtered in the thousands",
+                     "Value": "Animals Slaughtered",
                      "Item": "Species"
-                 },
-                title="How many animals are slaughtered per year in Chile?")
+                 }
 st.plotly_chart(fig, use_container_width=True)
