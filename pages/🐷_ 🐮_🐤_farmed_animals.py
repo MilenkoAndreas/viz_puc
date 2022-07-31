@@ -61,7 +61,7 @@ df_total_pigs.Year=pd.to_datetime(df_total_pigs.Year, format='%Y')
 
 country = st.selectbox(
      'Select a Country',
-      pd.unique(df_total_pigs["Area"]),index=40)
+      pd.unique(df_total_pigs["Area"]),index=36)
       
 source=df_total_pigs\
       .query('Area == @country ')
