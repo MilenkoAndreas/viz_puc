@@ -55,7 +55,7 @@ with fig_col_b:
 
 
 #st.markdown("# Plotting Demo")
-st.sidebar.header("Plotting Demo")
+#st.sidebar.header("Plotting Demo")
 
 
 
@@ -83,7 +83,7 @@ df_total_pigs=df.merge(df_regions, left_on='Area', right_on='name', how='left')\
 .query('Item == "Meat, chicken"')
 
 df_total_pigs['sub-region']=df_total_pigs['intermediate-region'].where(df_total_pigs['sub-region'].eq('Latin America and the Caribbean'),df_total_pigs['sub-region'])
-df_total_pigs_last=df_total_pigs[df_total_pigs['Year']==2019]
+df_total_pigs_last=df_total_pigs[df_total_pigs['Year']==2020]
 #df_nan=df_total_pigs[df_total_pigs['sub-region'].isnull()]
 #df_nan['Area'].value_counts()
 #df_total['Region'].value_counts()
